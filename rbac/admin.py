@@ -3,11 +3,9 @@ from rbac import models
 from django.conf import global_settings
 
 
-# Register your models here.
-
 class PermissionConfig(admin.ModelAdmin):
-    list_display = ['id', 'url', 'title','menu']
-    list_editable = ['url', 'title','menu']
+    list_display = ['id', 'url', 'title', 'menu']
+    list_editable = ['url', 'title', 'menu']
 
 
 admin.site.register(models.Permission, PermissionConfig)

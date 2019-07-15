@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web.apps.WebConfig',
-    'rbac.apps.RbacConfig'
+    'rbac.apps.RbacConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -47,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'rbac.middleware.my_middleware.Auth',
+    'rbac.middlewares.middleware.AuthMiddleWare'
 ]
 
 ROOT_URLCONF = 'luffy_permission.urls'
@@ -117,20 +118,25 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# 白名单
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+#  白名单
 WHITE_LIST = [
     r'/login/$',
     r'/reg/$',
     r'/admin/.*'
 ]
 
-# 免认证地址
+# 免认证的地址
 NO_PERMISSION_LIST = [
     r'/index/'
+
 ]
 
-#权限的session的key
+# 权限的session的key
 PERMISSION_SESSION_KEY = 'permission'
 
-# 菜单的列表
-MENU_SESSION_KEY = 'menus'
+# 菜单的session的key
+MENU_SESSION_KEY = 'menu'

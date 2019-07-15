@@ -1,6 +1,6 @@
 import os
 import mimetypes
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.http import FileResponse
 from django.conf import settings
 # import xlrd
@@ -59,5 +59,3 @@ def customer_del(request, cid):
     """
     models.Customer.objects.filter(id=cid).delete()
     return redirect('/customer/list/')
-
-
