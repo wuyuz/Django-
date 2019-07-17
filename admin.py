@@ -2,6 +2,8 @@ from django.contrib import admin
 from rbac import models
 from django.conf import global_settings
 
+from django.conf import settings
+
 
 class PermissionConfig(admin.ModelAdmin):
     list_display = ['id', 'url', 'title', 'menu']
