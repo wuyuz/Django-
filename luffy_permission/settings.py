@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'rbac.middlewares.middleware.AuthMiddleWare'
+    # 'rbac.middlewares.middleware.AuthMiddleWare'
 ]
 
 ROOT_URLCONF = 'luffy_permission.urls'
